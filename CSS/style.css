@@ -1,0 +1,73 @@
+/*Fondo general*/
+body {
+    background: url('../IMG/fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin-top: 100px; /*Para compensar la barra fija*/
+    height: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    overflow-y: auto;   /* Permite el scroll vertical si es necesario */
+  }
+
+  /*Barra de navegación*/
+  .navbar{
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-nav .nav-link {
+    margin-left: 50px;
+  }
+
+  .bg-morado{
+    background-color: #6a1b9a !important;
+  }
+  
+  .header-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 50px;
+    box-sizing: border-box;
+
+  }
+  
+  .header-text {
+    text-align: left;
+    padding: 70px;
+  }
+
+  .carousel-inner img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+  
+  .button-line-container {
+    display: flex;
+    align-items: center; /* Alinea la línea y el botón verticalmente */
+    gap: 5px; /* Espacio entre el botón y la línea */
+  }
+
+  .btn-custom {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    font-weight: bold;
+    padding: 10px 50px;
+    border-radius: 10px;
+    margin-right: 200px;
+    transition: all 0.3s ease; /* Animación suave al cambiar estilos */
+  }
+  
+  .btn-custom:hover {
+    transform: scale(1.1); /* Hace que el botón sobresalga */
+    border-color: transparent; /* Cambia el color del borde a transparente */
+    background-color: #6a1b9a; /* Cambia el color de fondo para dar un efecto visual extra */
+  }
+
+  .line {
+    flex-grow: 1; /* Permite que la línea ocupe todo el espacio disponible */
+    height: 2px; /* Grosor de la línea */
+    background-color: white; /* Color de la línea */
+  }
+  

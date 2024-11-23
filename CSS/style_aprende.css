@@ -1,0 +1,24 @@
+/*Fondo general*/
+body {
+    background: url('../IMG/fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin-top: 100px; /*Para compensar la barra fija*/
+    height: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    overflow-y: auto;   /* Permite el scroll vertical si es necesario */
+  }
+
+  /*Barra de navegación*/
+  .navbar{
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-nav .nav-link {
+    margin-left: 50px;
+  }
+
+  .bg-morado{
+    background-color: #6a1b9a !important;
+  }
+/*---------------------------------------------------------------------------------------------*/
