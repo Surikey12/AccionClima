@@ -10,6 +10,8 @@
     <!-- Archivo de estilos -->
     <link rel="stylesheet" href="./CSS/style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Climate Action</title>
   </head>
   <body>
@@ -87,6 +89,39 @@
           </div>
           
         </div>
+        <!-- Nueva sección después del botón -->
+        <div class="climate-info mt-5">
+          <h2 class="custom-text">?Sabes cómo afecta el cambio climático a tu ciudad¿</h2>
+          <p class="custom-paragraph">
+            En la ciudad de Puebla, los efectos del cambio climático se han vuelto cada vez más evidentes en fenómenos como 
+            cambios en los patrones de lluvias, un aumento en las temperaturas, sequías prolongadas y lluvias intensas que 
+            afectan tanto a la infraestructura urbana como a las áreas verdes. La ciudad de Puebla, con su ubicación geográfica 
+            y diversidad climática, enfrenta riesgos que afectan la agricultura, la salud pública y la disponibilidad de 
+            recursos naturales como el agua
+        </p>
+          <p class="custom-paragraph">
+              Podemos notar alguno de sus efectos en los cambios que han ocurrido a lo largo de los años. Por ejemplo en estas 
+              grafica podemos notar algunos de los cambios que ha experimentado Puebla al pasar de los años
+          </p>
+          <div class="climate-chart-container">
+            <canvas id="pueblaClimateChart"></canvas>
+        </div>
+        <p class="custom-paragraph">
+          Esta gráfica muestra la comparación de las temperaturas medias mensuales en la ciudad de Puebla durante tres años diferentes: 
+          <strong>2024, 2012 y 2000</strong>. 
+          Es importante notar cómo las temperaturas han aumentado en promedio en los últimos años
+        </p>
+        <div class="climate-chart-container">
+          <canvas id="pueblaRainChart"></canvas>
+      </div>
+        <p class="custom-paragraph">
+          La comparación entre estos años revela variaciones significativas en los patrones de precipitación, especialmente durante la temporada de lluvias (mayo a octubre).
+          Estos datos ayudan a identificar tendencias en los niveles de lluvia en Puebla, lo cual es relevante para la gestión hídrica y la planificación de actividades agrícolas y urbanas
+    </p>
+        </p>
+        
+        </div>
+
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Archivo de JavaScript-->
