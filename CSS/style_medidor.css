@@ -22,3 +22,11 @@ body {
     background-color: #6a1b9a !important;
   }
 /*---------------------------------------------------------------------------------------------*/
+
+img {
+    width: 50%; /* Ajusta el tamaño de las imágenes */
+    display: flex; /* Activa Flexbox */
+    justify-content: space-between; /* Distribuye las imágenes a los lados */
+    align-items: center; /* Centra las imágenes verticalmente */
+    padding: 0 20px; /* Opcional: Espaciado en los lados para que no queden pegadas al borde */
+}
