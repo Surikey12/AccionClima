@@ -70,4 +70,25 @@ body {
     height: 2px; /* Grosor de la línea */
     background-color: white; /* Color de la línea */
   }
+/* Estilos para el overlay del propósito */
+.propósito-overlay {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 3, 3, 0.7); 
+  color: #ffffff; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.5;
+  padding: 20px;
+  z-index: 1000; /* Asegurar que quede sobre el carrusel */
+  box-sizing: border-box; /* Incluir padding dentro del ancho/alto */
+  font-weight: 500; 
+  box-shadow: 0 5px 5px rgba(214, 179, 255, 0.2); /* Sombra */
+}
   
