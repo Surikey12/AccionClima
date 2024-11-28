@@ -135,14 +135,32 @@ body {
 }
 
 /* Videos */
-.video-container iframe {
-  width: 100%; /* Hacer que ocupen todo el ancho disponible */
-  max-width: 400px; /* Limitar el tamaño máximo */
-  height: 225px; /* Proporción 16:9 */
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+
+/* Espaciado entre columnas */
+.section .row {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
+/* Asegurar que los videos estén bien alineados */
+.video-container iframe {
+  width: 100%; /* Ajuste completo para pantallas pequeñas */
+  max-width: 500px; /* Máximo ancho en pantallas grandes */
+  height: 280px; /* Relación de aspecto 16:9 */
+  margin-bottom: 20px; /* Espaciado entre videos */
+  border: none;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para estética */
+}
+
+/* Espaciado responsivo */
+@media (max-width: 992px) {
+  .video-container iframe {
+    max-width: 100%; /* Asegura que los videos se ajusten en pantallas pequeñas */
+    height: 200px; /* Altura reducida */
+  }
+}
+
 
 /* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -158,4 +176,44 @@ body {
     max-width: 100%; /* Hacer que los videos ocupen todo el ancho disponible */
     height: 200px; /* Altura ajustada */
   }
+}
+
+/* Sección Infografías */
+.section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.section h1 {
+  font-size: 2.5rem;
+  color: #1a535c;
+}
+
+.section h3 {
+  color: #4ecdc4;
+}
+
+.section p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.section ul li strong {
+  color: #1a535c;
+}
+
+.section img {
+  border: 2px solid #ddd;
+  border-radius: 8px;
 }
