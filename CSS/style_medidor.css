@@ -23,10 +23,70 @@ body {
   }
 /*---------------------------------------------------------------------------------------------*/
 
-img {
-    width: 50%; /* Ajusta el tamaño de las imágenes */
-    display: flex; /* Activa Flexbox */
-    justify-content: space-between; /* Distribuye las imágenes a los lados */
-    align-items: center; /* Centra las imágenes verticalmente */
-    padding: 0 20px; /* Opcional: Espaciado en los lados para que no queden pegadas al borde */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+    padding: 0 40px;
+    flex-direction: row-reverse; /* Invertimos el orden */
+
+}
+
+.content {
+    max-width: 700px;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(2, 0, 0), rgb(2, 0, 0)); /* Degradado de color */
+    color: rgba(62, 255, 0, 0.82);
+    display: inline-block;
+    padding: 30px 50px;
+    border-radius: 30px;
+    box-shadow: 0 50px 70px rgba(0, 0, 0, 0.3), 0 0 10px rgba(50, 205, 50, 0.7); /* Sombra más suave */
+    text-transform: uppercase;
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.content h1:hover {
+    background: linear-gradient(45deg, rgb(2, 0, 0), rgb(2, 0, 0));
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.4), 0 0 15px rgba(50, 205, 50, 0.8); /* Sombra al hacer hover */
+}
+
+.btn {
+    margin-top: 10%; /* Separion del texto con el boton  */
+    transition: all 0.3s ease-in-out;
+    font-family: "Dosis", sans-serif;
+}
+
+.btn {
+    width: 200px;
+    height: 70px;
+    border-radius: 50px;
+    background-image: linear-gradient(135deg, #020000 0%, #3eff00 100%);
+    box-shadow: 0 20px 30px -6px rgb(2, 0, 0);
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.btn:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+.btn:active {
+    opacity: 0.5;
+}
+
+.image img {
+    width: 110%;
+    display: block;
 }
