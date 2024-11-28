@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="./CSS/style_login.css"> 
+</head>
+<body class="bg-info d-flex justify-content-center align-items-center vh-100">
+    <!-- Login Form -->
+    <div id="signInForm" class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem;">
+        <div class="d-flex justify-content-center">
+            <img src="IMG/login-icon.svg" alt="login-icon" style="height: 7rem;">
+        </div>
+        <div class="text-center fs-1 fw-bold">Login</div>
+        <div class="input-group mt-1 ">
+            <div class="input-group-text bg-info">
+                <img src="IMG/username-icon.svg" alt="username-icon" style="height: 1rem;">
+            </div>
+            <input class="form-control bg-light" style = "width: 70%;" type="email" name="usuario" id="usuario" placeholder="Username(Correo)">
+        </div>
+        <div class="input-group mt-1">
+            <div class="input-group-text bg-info">
+                <img src="IMG/password-icon.svg" alt="password-icon" style="height: 1rem;">
+            </div>
+            <input class="form-control bg-light" type="password" name="passin" id="passin" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm">Login</button>
+        <div class="d-flex gap-1 justify-content-center mt-1">
+            <div><div></div>
+                Don't have an account?
+            <button id="signUpButton" class="text-decoration-none text-info fw-semibold btn btn-link">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="signUpForm" class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem; display: none;">
+        <div class="d-flex justify-content-center">
+            <img src="IMG/login-icon.svg" alt="register-icon" style="height: 7rem;">
+        </div>
+        <div class="text-center fs-1 fw-bold">Register</div>
+        <form>
+            <div class="input-group mt-4">
+                <div class="input-group-text bg-info">
+                    <img src="IMG/username-icon.svg" alt="username-icon" style="height: 1rem;">
+                </div>
+                <input class="form-control bg-light" style = "width: 70%;" type="text" name="name" id="name" placeholder="First Name">
+            </div>
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-info">
+                    <img src="IMG/username-icon.svg" alt="username-icon" style="height: 1rem;">
+                </div>
+                <input class="form-control bg-light" style = "width: 70%;" type="text" name="apell" id="apell" placeholder="Last Name">
+            </div>
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-info ">
+                    <img src="IMG/email-icon.svg" alt="email-icon" style="height: 1rem;">
+                </div>
+                <input class="form-control bg-light" type="email" name="email" id="email" placeholder="Email">
+            </div>
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-info">
+                    <img src="IMG/password-icon.svg" alt="password-icon" style="height: 1rem;">
+                </div>
+                <input class="form-control bg-light" type="password" name="passup" id="passup" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm">Sign Up</button>
+        </form>
+        <div class="d-flex gap-1 justify-content-center mt-1">
+            <div><div></div>
+                Already have an account?
+            <button id="signInButton" class="text-decoration-none text-info fw-semibold btn btn-link">Login</button>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        /*Script para el cambio entre login y registro */
+        document.addEventListener('DOMContentLoaded', function () {
+            const signUpButton = document.getElementById('signUpButton');
+            const signInButton = document.getElementById('signInButton');
+            const signInForm = document.getElementById('signInForm');
+            const signUpForm = document.getElementById('signUpForm');
+
+            signUpButton.addEventListener('click', function () {
+                signInForm.style.display = "none";
+                signUpForm.style.display = "block";
+            });
+
+            signInButton.addEventListener('click', function () {
+                signInForm.style.display = "block";
+                signUpForm.style.display = "none";
+            });
+
+
+            
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+    <!-- Archivo de JavaScript si se llegara a ocupar aqui-->
+    <script src="JS/login.js"></script>
+</body>
+</html>
