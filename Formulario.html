@@ -1,96 +1,484 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de Electrónicos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    .container {
-      width: 80%;
-      margin: auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+  <!-- Archivo de estilos -->
+  <link rel="stylesheet" href="./CSS/style_formulario.css">
 
-    h1 {
-      text-align: center;
-      color: #3e7c3b;
-    }
-
-    .question {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 15px;
-    }
-
-    .options {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .options label {
-      font-size: 16px;
-      color: #333;
-      display: block;
-      margin: 5px 0;
-    }
-
-    .btn {
-      background-color: #3e7c3b;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-
-    .btn:hover {
-      background-color: #317b2f;
-    }
-
-    .btn-container {
-      text-align: center;
-    }
-  </style>
+  <title>Medidor de Impacto</title>
 </head>
 <body>
+<!-- ====================================================================================================== -->
+<!-- BARRA DE NAVEGACIÓN -->
+<!-- ====================================================================================================== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Acerca de</a></li>
+        <li class="nav-item"><a class="nav-link" href="aprende.html">Aprende</a></li>
+        <li class="nav-item"><a class="nav-link" href="medidor_impacto.html">Medidor de Impacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="toma_accion.html">Toma Acción</a></li>
+      </ul>
+    </div>
+    <a class="navbar-brand me-auto"  href="#">Climate Action</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
 
-<div class="container">
-  <h1>Formulario de Aparatos Electrónicos</h1>
-  <form>
-    <div class="question">
-      <p>1. ¿Qué aparatos electrónicos tienes en casa? Selecciona todos los que tengas.</p>
-    </div>
-    <div class="options">
-      <label><input type="checkbox" name="electrodomestico" value="Refrigerador"> Refrigerador</label>
-      <label><input type="checkbox" name="electrodomestico" value="Horno de microondas"> Horno de microondas</label>
-      <label><input type="checkbox" name="electrodomestico" value="Lavadora"> Lavadora</label>
-      <label><input type="checkbox" name="electrodomestico" value="Secadora de ropa"> Secadora de ropa</label>
-      <label><input type="checkbox" name="electrodomestico" value="Aire acondicionado"> Aire acondicionado</label>
-      <label><input type="checkbox" name="electrodomestico" value="Computadora"> Computadora</label>
-      <label><input type="checkbox" name="electrodomestico" value="Laptop"> Laptop</label>
-      <label><input type="checkbox" name="electrodomestico" value="Televisión"> Televisión</label>
-      <label><input type="checkbox" name="electrodomestico" value="Consola de Videojuegos"> Consola de Videojuegos</label>
-      <label><input type="checkbox" name="electrodomestico" value="Ventiladores"> Ventiladores</label>
-    </div>
 
-    <div class="btn-container">
-      <button type="submit" class="btn">Siguiente</button>
+<div class="container mt-5">
+  <h1>Calculemos tu huella de carbono</h1>
+
+  <!-- Preguntas dinámicas con opciones múltiples -->
+  <div id="question1" class="question-section">
+    <h5>1. ¿Cuál es tu consumo mensual promedio de electricidad (kWh)?</h5>
+    <div>
+      <input type="radio" id="electricity1" name="electricity" value="100">
+      <label for="electricity1">Menos de 100 kWh</label><br>
+
+      <input type="radio" id="electricity2" name="electricity" value="250">
+      <label for="electricity2">Entre 100 y 250 kWh</label><br>
+
+      <input type="radio" id="electricity3" name="electricity" value="500">
+      <label for="electricity3">Más de 250 kWh</label>
     </div>
-  </form>
+  </div>
+
+  <div id="question2" class="question-section hidden">
+    <h5>2. ¿Cuál es tu consumo mensual promedio de gas natural (m³)?</h5>
+    <div>
+      <input type="radio" id="gas1" name="gas" value="10">
+      <label for="gas1">Menos de 10 m³</label><br>
+
+      <input type="radio" id="gas2" name="gas" value="20">
+      <label for="gas2">Entre 10 y 20 m³</label><br>
+
+      <input type="radio" id="gas3" name="gas" value="30">
+      <label for="gas3">Más de 20 m³</label>
+    </div>
+  </div>
+
+  <div id="question3" class="question-section hidden">
+    <h5>3. ¿Cuántos kilómetros conduces al mes en promedio?</h5>
+    <div>
+      <input type="radio" id="car1" name="car" value="100">
+      <label for="car1">Menos de 100 km</label><br>
+
+      <input type="radio" id="car2" name="car" value="500">
+      <label for="car2">Entre 100 y 500 km</label><br>
+
+      <input type="radio" id="car3" name="car" value="1000">
+      <label for="car3">Más de 500 km</label>
+    </div>
+  </div>
+
+  <div id="question4" class="question-section hidden">
+    <h5>4. ¿Cuánto usas el transporte público al mes?</h5>
+    <div>
+      <input type="radio" id="publicTransport1" name="publicTransport" value="10">
+      <label for="publicTransport1">Menos de 10 viajes</label><br>
+
+      <input type="radio" id="publicTransport2" name="publicTransport" value="50">
+      <label for="publicTransport2">Entre 10 y 50 viajes</label><br>
+
+      <input type="radio" id="publicTransport3" name="publicTransport" value="100">
+      <label for="publicTransport3">Más de 50 viajes</label>
+    </div>
+  </div>
+
+  <div id="question5" class="question-section hidden">
+    <h5>5. ¿Cuántos vuelos tomas al año?</h5>
+    <div>
+      <input type="radio" id="flights1" name="flights" value="1">
+      <label for="flights1">1 vuelo al año</label><br>
+
+      <input type="radio" id="flights2" name="flights" value="5">
+      <label for="flights2">De 1 a 5 vuelos al año</label><br>
+
+      <input type="radio" id="flights3" name="flights" value="10">
+      <label for="flights3">Más de 5 vuelos al año</label>
+    </div>
+  </div>
+
+  <div id="question6" class="question-section hidden">
+    <h5>6. ¿Con qué frecuencia consumes carne roja?</h5>
+    <div>
+      <input type="radio" id="redMeat1" name="redMeat" value="1">
+      <label for="redMeat1">Rara vez</label><br>
+
+      <input type="radio" id="redMeat2" name="redMeat" value="3">
+      <label for="redMeat2">2-3 veces a la semana</label><br>
+
+      <input type="radio" id="redMeat3" name="redMeat" value="5">
+      <label for="redMeat3">Más de 3 veces a la semana</label>
+    </div>
+  </div>
+
+  <div id="question7" class="question-section hidden">
+    <h5>7. ¿Con qué frecuencia consumes carne de pollo?</h5>
+    <div>
+      <input type="radio" id="chicken1" name="chicken" value="1">
+      <label for="chicken1">Rara vez</label><br>
+
+      <input type="radio" id="chicken2" name="chicken" value="3">
+      <label for="chicken2">2-3 veces a la semana</label><br>
+
+      <input type="radio" id="chicken3" name="chicken" value="5">
+      <label for="chicken3">Más de 3 veces a la semana</label>
+    </div>
+  </div>
+
+  <div id="question8" class="question-section hidden">
+    <h5>8. ¿Cuánto residuos generas semanalmente?</h5>
+    <div>
+      <input type="radio" id="waste1" name="waste" value="5">
+      <label for="waste1">Menos de 5 kg</label><br>
+
+      <input type="radio" id="waste2" name="waste" value="10">
+      <label for="waste2">Entre 5 y 10 kg</label><br>
+
+      <input type="radio" id="waste3" name="waste" value="20">
+      <label for="waste3">Más de 10 kg</label>
+    </div>
+  </div>
+
+  <div id="question9" class="question-section hidden">
+    <h5>9. ¿Cuántos dispositivos electrónicos usas (móviles, computadoras, etc.)?</h5>
+    <div>
+      <input type="radio" id="electronics1" name="electronics" value="1">
+      <label for="electronics1">1-2 dispositivos</label><br>
+
+      <input type="radio" id="electronics2" name="electronics" value="3">
+      <label for="electronics2">3-5 dispositivos</label><br>
+
+      <input type="radio" id="electronics3" name="electronics" value="6">
+      <label for="electronics3">Más de 5 dispositivos</label>
+    </div>
+  </div>
+
+  <div id="question10" class="question-section hidden">
+    <h5>10. ¿Cuántas horas usas el aire acondicionado al mes?</h5>
+    <div>
+      <input type="radio" id="ac1" name="ac" value="10">
+      <label for="ac1">Menos de 10 horas</label><br>
+
+      <input type="radio" id="ac2" name="ac" value="50">
+      <label for="ac2">De 10 a 50 horas</label><br>
+
+      <input type="radio" id="ac3" name="ac" value="100">
+      <label for="ac3">Más de 50 horas</label>
+    </div>
+  </div>
+
+  <div id="question11" class="question-section hidden">
+    <h5>11. ¿Cuántas veces compras productos en línea al mes?</h5>
+    <div>
+      <input type="radio" id="onlineShopping1" name="onlineShopping" value="1">
+      <label for="onlineShopping1">1-2 veces</label><br>
+
+      <input type="radio" id="onlineShopping2" name="onlineShopping" value="5">
+      <label for="onlineShopping2">3-5 veces</label><br>
+
+      <input type="radio" id="onlineShopping3" name="onlineShopping" value="10">
+      <label for="onlineShopping3">Más de 5 veces</label>
+    </div>
+  </div>
+
+  <div id="question12" class="question-section hidden">
+    <h5>12. ¿Tienes electrodomésticos de bajo consumo?</h5>
+    <div>
+      <input type="radio" id="lowEnergyAppliances1" name="lowEnergyAppliances" value="5">
+      <label for="lowEnergyAppliances1">Sí, todos</label><br>
+
+      <input type="radio" id="lowEnergyAppliances2" name="lowEnergyAppliances" value="2">
+      <label for="lowEnergyAppliances2">Algunos</label><br>
+
+      <input type="radio" id="lowEnergyAppliances3" name="lowEnergyAppliances" value="0">
+      <label for="lowEnergyAppliances3">Ninguno</label>
+    </div>
+  </div>
+
+  <div id="question13" class="question-section hidden">
+    <h5>13. ¿Usas energía solar o renovable en tu hogar?</h5>
+    <div>
+      <input type="radio" id="renewable1" name="renewable" value="0">
+      <label for="renewable1">Sí, totalmente</label><br>
+
+      <input type="radio" id="renewable2" name="renewable" value="3">
+      <label for="renewable2">Usamos algo de energía renovable</label><br>
+
+      <input type="radio" id="renewable3" name="renewable" value="5">
+      <label for="renewable3">No usamos energía renovable</label>
+    </div>
+  </div>
+
+  <div id="question14" class="question-section hidden">
+    <h5>14. ¿Tienes alguna política de reciclaje en tu hogar?</h5>
+    <div>
+      <input type="radio" id="recycling1" name="recycling" value="0">
+      <label for="recycling1">Sí, reciclamos siempre</label><br>
+
+      <input type="radio" id="recycling2" name="recycling" value="3">
+      <label for="recycling2">Reciclamos a veces</label><br>
+
+      <input type="radio" id="recycling3" name="recycling" value="5">
+      <label for="recycling3">Nunca reciclamos</label>
+    </div>
+  </div>
+
+  <div id="question15" class="question-section hidden">
+    <h5>15. ¿Tu vivienda tiene aislamiento térmico?</h5>
+    <div>
+      <input type="radio" id="thermalInsulation1" name="thermalInsulation" value="0">
+      <label for="thermalInsulation1">Sí</label><br>
+
+      <input type="radio" id="thermalInsulation2" name="thermalInsulation" value="3">
+      <label for="thermalInsulation2">No, pero lo tenemos planeado</label><br>
+
+      <input type="radio" id="thermalInsulation3" name="thermalInsulation" value="5">
+      <label for="thermalInsulation3">No</label>
+    </div>
+  </div>
+
+  <div id="question16" class="question-section hidden">
+    <h5>16. ¿Consumes alimentos orgánicos?</h5>
+    <div>
+      <input type="radio" id="organicFood1" name="organicFood" value="1">
+      <label for="organicFood1">Rara vez</label><br>
+
+      <input type="radio" id="organicFood2" name="organicFood" value="3">
+      <label for="organicFood2">De vez en cuando</label><br>
+
+      <input type="radio" id="organicFood3" name="organicFood" value="5">
+      <label for="organicFood3">Siempre</label>
+    </div>
+  </div>
+
+  <div id="question17" class="question-section hidden">
+    <h5>17. ¿Reemplazas tus dispositivos electrónicos por modelos más eficientes?</h5>
+    <div>
+      <input type="radio" id="efficientDevices1" name="efficientDevices" value="0">
+      <label for="efficientDevices1">Sí</label><br>
+
+      <input type="radio" id="efficientDevices2" name="efficientDevices" value="3">
+      <label for="efficientDevices2">A veces</label><br>
+
+      <input type="radio" id="efficientDevices3" name="efficientDevices" value="5">
+      <label for="efficientDevices3">Nunca</label>
+    </div>
+  </div>
+
+  <div id="question18" class="question-section hidden">
+    <h5>18. ¿Llevas a cabo alguna actividad para conservar el agua?</h5>
+    <div>
+      <input type="radio" id="waterConservation1" name="waterConservation" value="0">
+      <label for="waterConservation1">Sí, siempre</label><br>
+
+      <input type="radio" id="waterConservation2" name="waterConservation" value="3">
+      <label for="waterConservation2">A veces</label><br>
+
+      <input type="radio" id="waterConservation3" name="waterConservation" value="5">
+      <label for="waterConservation3">Nunca</label>
+    </div>
+  </div>
+
+  <div id="question19" class="question-section hidden">
+    <h5>19. ¿Utilizas productos de limpieza ecológicos?</h5>
+    <div>
+      <input type="radio" id="ecoCleaning1" name="ecoCleaning" value="0">
+      <label for="ecoCleaning1">Siempre</label><br>
+
+      <input type="radio" id="ecoCleaning2" name="ecoCleaning" value="3">
+      <label for="ecoCleaning2">De vez en cuando</label><br>
+
+      <input type="radio" id="ecoCleaning3" name="ecoCleaning" value="5">
+      <label for="ecoCleaning3">Nunca</label>
+    </div>
+  </div>
+
+  <div id="question20" class="question-section hidden">
+    <h5>20. ¿Qué tan a menudo compras productos de segunda mano?</h5>
+    <div>
+      <input type="radio" id="secondHand1" name="secondHand" value="0">
+      <label for="secondHand1">Frecuentemente</label><br>
+
+      <input type="radio" id="secondHand2" name="secondHand" value="3">
+      <label for="secondHand2">A veces</label><br>
+
+      <input type="radio" id="secondHand3" name="secondHand" value="5">
+      <label for="secondHand3">Nunca</label>
+    </div>
+  </div>
+
+  <div class="result-section hidden" id="resultSection">
+    <h3>Tu huella de carbono es:  <br><span id="carbonResult">Calculando...</span></h3>
+  </div>
+
+  <!-- Botones de navegación -->
+  <div class="d-flex justify-content-between mt-4">
+    <!--<button type="button" id="backButton" class="btn btn-secondary hidden">Regresar</button>-->
+
+    <button id="backButton" class="animated-button">
+
+      <span class="text">Regresar</span>
+      <span class="circle"></span>
+
+    </button>
+
+    <button id="nextButton" class="animated-button">
+      <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+        ></path>
+      </svg>
+      <span class="text">Siguiente</span>
+      <span class="circle"></span>
+      <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+        ></path>
+      </svg>
+    </button>
+
+    <!--<button id="nextButton" class="btn btn-primary">Siguiente</button>-->
+  </div>
+
+  <!-- Botón para reiniciar -->
+  <div class="mt-4">
+    <button id="resetButton" class="animated-button">
+      <span class="text">Volver al inicio</span>
+      <span class="circle"></span>
+    </button>
+    <!--<button type="button" id="resetButton" class="btn">Volver al inicio</button>-->
+  </div>
+
 </div>
 
+
+<div class="scene">
+  <div class="forest">
+    <div class="tree tree1">
+      <div class="branch branch-top"></div>
+      <div class="branch branch-middle"></div>
+    </div>
+
+    <div class="tree tree2">
+      <div class="branch branch-top"></div>
+      <div class="branch branch-middle"></div>
+      <div class="branch branch-bottom"></div>
+    </div>
+
+    <div class="tree tree3">
+      <div class="branch branch-top"></div>
+      <div class="branch branch-middle"></div>
+      <div class="branch branch-bottom"></div>
+    </div>
+
+    <div class="tree tree4">
+      <div class="branch branch-top"></div>
+      <div class="branch branch-middle"></div>
+      <div class="branch branch-bottom"></div>
+    </div>
+
+    <div class="tree tree5">
+      <div class="branch branch-top"></div>
+      <div class="branch branch-middle"></div>
+      <div class="branch branch-bottom"></div>
+    </div>
+
+    <div class="tree tree6">
+      <div class="branch branch-top"></div>
+      <div class="branch branch-middle"></div>
+      <div class="branch branch-bottom"></div>
+    </div>
+
+    <div class="tree tree7">
+      <div class="branch branch-top"></div>
+      <div class="branch branch-middle"></div>
+      <div class="branch branch-bottom"></div>
+    </div>
+  </div>
+
+  <div class="tent">
+    <div class="roof"></div>
+    <div class="roof-border-left">
+      <div class="roof-border roof-border1"></div>
+      <div class="roof-border roof-border2"></div>
+      <div class="roof-border roof-border3"></div>
+    </div>
+    <div class="entrance">
+      <div class="door left-door">
+        <div class="left-door-inner"></div>
+      </div>
+      <div class="door right-door">
+        <div class="right-door-inner"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="floor">
+    <div class="ground ground1"></div>
+    <div class="ground ground2"></div>
+  </div>
+
+  <div class="fireplace">
+    <div class="support"></div>
+    <div class="support"></div>
+    <div class="bar"></div>
+    <div class="hanger"></div>
+    <div class="smoke"></div>
+    <div class="pan"></div>
+    <div class="fire">
+      <div class="line line1">
+        <div class="particle particle1"></div>
+        <div class="particle particle2"></div>
+        <div class="particle particle3"></div>
+        <div class="particle particle4"></div>
+      </div>
+      <div class="line line2">
+        <div class="particle particle1"></div>
+        <div class="particle particle2"></div>
+        <div class="particle particle3"></div>
+        <div class="particle particle4"></div>
+      </div>
+      <div class="line line3">
+        <div class="particle particle1"></div>
+        <div class="particle particle2"></div>
+        <div class="particle particle3"></div>
+        <div class="particle particle4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="time-wrapper">
+    <div class="time">
+      <div class="day"></div>
+      <div class="night">
+        <div class="moon"></div>
+        <div class="star star1 star-big"></div>
+        <div class="star star2 star-big"></div>
+        <div class="star star3 star-big"></div>
+        <div class="star star4"></div>
+        <div class="star star5"></div>
+        <div class="star star6"></div>
+        <div class="star star7"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- Archivo de JavaScript si se llegara a ocupar aqui-->
+<script src="JS/formulario.js"></script>
 </body>
 </html>
