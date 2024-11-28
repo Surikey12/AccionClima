@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="es" dir="ltr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -86,43 +86,61 @@
                     <button class="btn btn-custom"  onclick="window.location.href='toma_accion.php';">Actúa Ahora</button>
                     <div class="line"></div>
                 </div>
-          </div>
-          
+          </div>       
         </div>
         <!-- Nueva sección después del botón -->
         <div class="climate-info mt-5">
-          <h2 class="custom-text">?Sabes cómo afecta el cambio climático a tu ciudad¿</h2>
+          <h2 class="custom-text">¿Sabes cómo afecta el cambio climático a tu ciudad?</h2>
+          <p class="custom-paragraph">
+            El cambio climático es uno de los mayores desafíos globales de nuestro tiempo, y sus efectos son cada vez más evidentes en diversas partes del mundo.
+            Este fenómeno, impulsado principalmente por la actividad humana, está alterando los patrones climáticos y provocando fenómenos extremos.
+            A medida que las temperaturas globales aumentan debido a las emisiones de gases de efecto invernadero, las consecuencias para la naturaleza, 
+            la economía y las comunidades se vuelven cada vez más graves.
+          </p>
           <p class="custom-paragraph">
             En la ciudad de Puebla, los efectos del cambio climático se han vuelto cada vez más evidentes en fenómenos como 
             cambios en los patrones de lluvias, un aumento en las temperaturas, sequías prolongadas y lluvias intensas que 
             afectan tanto a la infraestructura urbana como a las áreas verdes. La ciudad de Puebla, con su ubicación geográfica 
             y diversidad climática, enfrenta riesgos que afectan la agricultura, la salud pública y la disponibilidad de 
-            recursos naturales como el agua
-        </p>
-          <p class="custom-paragraph">
-              Podemos notar alguno de sus efectos en los cambios que han ocurrido a lo largo de los años. Por ejemplo en estas 
-              grafica podemos notar algunos de los cambios que ha experimentado Puebla al pasar de los años
+            recursos naturales como el agua.
           </p>
-          <div class="climate-chart-container">
-            <canvas id="pueblaClimateChart"></canvas>
-        </div>
-        <p class="custom-paragraph">
-          Esta gráfica muestra la comparación de las temperaturas medias mensuales en la ciudad de Puebla durante tres años diferentes: 
-          <strong>2024, 2012 y 2000</strong>. 
-          Es importante notar cómo las temperaturas han aumentado en promedio en los últimos años
-        </p>
-        <div class="climate-chart-container">
-          <canvas id="pueblaRainChart"></canvas>
-      </div>
-        <p class="custom-paragraph">
-          La comparación entre estos años revela variaciones significativas en los patrones de precipitación, especialmente durante la temporada de lluvias (mayo a octubre).
-          Estos datos ayudan a identificar tendencias en los niveles de lluvia en Puebla, lo cual es relevante para la gestión hídrica y la planificación de actividades agrícolas y urbanas
-    </p>
-        </p>
-        
-        </div>
+          <p class="custom-paragraph">
+          Podemos notar algunos de los cambios que ha experimentado Puebla al pasar de los años: 
+          </p>
 
-      </div>
+           <!-- Botones -->
+          <button id="temperatureButton" class="custom-button">Cambios en Temperatura</button>
+          <button id="rainButton" class="custom-button">Cambios en Precipitación</button>
+
+          <!-- Contenedor para mostrar las gráficas -->
+          
+          <canvas id="pueblaClimateChart" style="display:none;"></canvas> <!-- Gráfico de temperatura -->
+          <canvas id="pueblaRainChart" style="display:none;"></canvas> 
+
+          <!-- Contenedores de texto -->
+          <div id="temperatureText" style="display:none;">
+            <p class="custom-paragraph">
+              Esta gráfica muestra la comparación de las temperaturas medias mensuales en la ciudad de Puebla durante tres años diferentes: 
+              <strong>2024, 2012 y 2000</strong>.
+              Es importante notar cómo las temperaturas han aumentado en promedio en los últimos años.
+            </p>
+          </div>
+
+          <div id="rainText" style="display:none;">
+            <p class="custom-paragraph">
+              La comparación entre estos años revela variaciones significativas en los patrones de precipitación, especialmente durante la temporada de lluvias (mayo a octubre).
+              Estos datos ayudan a identificar tendencias en los niveles de lluvia en Puebla, lo cual es relevante para la gestión hídrica y la planificación de actividades agrícolas y urbanas.
+            </p>
+          </div>
+
+          <p class="custom-paragraph">
+            El cambio climático no es un problema del futuro, ya está ocurriendo ahora y afecta tanto a los países más desarrollados como a los más vulnerables.
+            Las comunidades deben adaptarse a estos cambios, y todos debemos contribuir a reducir sus impactos reduciendo nuestras emisiones de carbono y adoptando prácticas más sostenibles.
+            Solo a través de un esfuerzo colectivo global y local podremos proteger nuestro planeta y garantizar un futuro más seguro y saludable para las generaciones futuras.
+          </p>
+          
+
+       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Archivo de JavaScript-->
      <script src="JS/app.js"></script>

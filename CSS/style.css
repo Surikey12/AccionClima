@@ -79,32 +79,52 @@ body {
 }
 
   .custom-text {
-    font-size: 2.8rem; /* Ajusta el tamaño del texto aquí */
+    font-size: 2.5rem; /* Ajusta el tamaño del texto aquí */
     font-weight: bold;
     color: white;
     text-align: left;
+    padding: 20px;
 }
 
   .custom-paragraph {
-    font-size: 1.2rem;
+    font-size: 1.2rem ;
     text-align: left;
     line-height: 1.6;
     margin: 0; /* Elimina márgenes adicionales */
-    padding: 0; /* Elimina relleno interno */
+    padding-left: 20px; /* Relleno solo en el lado izquierdo */
+    padding-right: 20px; /* Relleno solo en el lado derecho */
+    margin-bottom: 20px; 
     color: #ffffff;
   }
 
-  .climate-chart-container {
-    width: 100%;  /* O un tamaño fijo si lo prefieres, como 500px */
-    max-width: 600px; /* Limitar el ancho máximo del contenedor */
-    margin: 0 auto; /* Centrar el contenedor */
-    padding: 0;
+  canvas {
+    width: 600px !important;  /* Ancho fijo (ajústalo según lo necesites) */
+    height: 300px !important; /* Altura fija (ajústalo según lo necesites) */
+    margin-top: 20px;   /* Espacio superior entre los gráficos */
+    margin-bottom: 20px; 
+    display: block;     /* Para que el canvas se comporte como bloque */
+    margin-left: auto;  /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
+  }
+
+  
+
+ /* Estilo de los botones */
+.custom-button {
+  background-color: #9b59b6; /* Lila atractivo */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
 }
 
-  #pueblaClimateChart {
-      width: 100%;  /* Asegura que el canvas tome todo el ancho del contenedor */
-      height: 300px; /* Ajustar la altura para evitar que se estire demasiado */
-  }
+.custom-button:hover {
+  background-color: #8e44ad; /* Un tono más oscuro de lila */
+}
 
 
 
