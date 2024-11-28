@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Electrónicos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #3e7c3b;
+    }
+
+    .question {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .options label {
+      font-size: 16px;
+      color: #333;
+      display: block;
+      margin: 5px 0;
+    }
+
+    .btn {
+      background-color: #3e7c3b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #317b2f;
+    }
+
+    .btn-container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Formulario de Aparatos Electrónicos</h1>
+  <form>
+    <div class="question">
+      <p>1. ¿Qué aparatos electrónicos tienes en casa? Selecciona todos los que tengas.</p>
+    </div>
+    <div class="options">
+      <label><input type="checkbox" name="electrodomestico" value="Refrigerador"> Refrigerador</label>
+      <label><input type="checkbox" name="electrodomestico" value="Horno de microondas"> Horno de microondas</label>
+      <label><input type="checkbox" name="electrodomestico" value="Lavadora"> Lavadora</label>
+      <label><input type="checkbox" name="electrodomestico" value="Secadora de ropa"> Secadora de ropa</label>
+      <label><input type="checkbox" name="electrodomestico" value="Aire acondicionado"> Aire acondicionado</label>
+      <label><input type="checkbox" name="electrodomestico" value="Computadora"> Computadora</label>
+      <label><input type="checkbox" name="electrodomestico" value="Laptop"> Laptop</label>
+      <label><input type="checkbox" name="electrodomestico" value="Televisión"> Televisión</label>
+      <label><input type="checkbox" name="electrodomestico" value="Consola de Videojuegos"> Consola de Videojuegos</label>
+      <label><input type="checkbox" name="electrodomestico" value="Ventiladores"> Ventiladores</label>
+    </div>
+
+    <div class="btn-container">
+      <button type="submit" class="btn">Siguiente</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
