@@ -1,24 +1,219 @@
 /*Fondo general*/
 body {
-    background: url('../IMG/fondo.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    margin-top: 100px; /*Para compensar la barra fija*/
-    height: 100%;
-    overflow-x: hidden; /* Evita el scroll horizontal */
-    overflow-y: auto;   /* Permite el scroll vertical si es necesario */
-  }
+  background: url("../IMG/fondo.png") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  margin-top: 100px; /*Para compensar la barra fija*/
+  height: 100%;
+  overflow-x: hidden; /* Evita el scroll horizontal */
+  overflow-y: auto; /* Permite el scroll vertical si es necesario */
+}
 
-  /*Barra de navegación*/
-  .navbar{
-    transition: background-color 0.3s;
-  }
-  
-  .navbar-nav .nav-link {
-    margin-left: 50px;
-  }
+/*Barra de navegación*/
+.navbar {
+  transition: background-color 0.3s;
+}
 
-  .bg-morado{
-    background-color: #6a1b9a !important;
-  }
+.navbar-nav .nav-link {
+  margin-left: 50px;
+}
+
+.bg-morado {
+  background-color: #6a1b9a !important;
+}
+
 /*---------------------------------------------------------------------------------------------*/
+
+ /* Contenedor de los botones */
+ .buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px; 
+
+}
+
+/* Estilo de los botones */
+.btn-circle {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Elimina subrayado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-circle:hover {
+  transform: scale(1.1); /* Efecto de agrandamiento */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.btn-circle img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.btn-circle span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .btn-circle {
+      width: 120px;
+      height: 120px;
+  }
+
+  .btn-circle img {
+      width: 50px;
+      height: 50px;
+  }
+
+  .btn-circle span {
+      font-size: 12px;
+  }
+}
+
+/* General para todas las secciones */
+.section {
+  height: auto; /* Cambiar de altura fija (100vh) a automática en pantallas pequeñas */
+  padding: 40px 20px; /* Reducir padding lateral */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4; /* Fondo gris claro */
+  scroll-margin-top: 80px; /* Compensar el navbar fijo */
+}
+
+/* Alternar colores de fondo entre secciones */
+.section:nth-child(even) {
+  background-color: #e9ecef; /* Fondo más claro para secciones pares */
+}
+
+/* Títulos */
+.section h1 {
+  font-size: 2rem; /* Reducir tamaño en pantallas pequeñas */
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center; /* Centrar el texto siempre */
+}
+
+/* Texto */
+.section p {
+  font-size: 1rem; /* Tamaño más pequeño en pantallas pequeñas */
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+/* Imágenes */
+.section img {
+  max-width: 100%;
+  height: auto; /* Asegura que las imágenes se ajusten automáticamente */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin-bottom: 20px;
+}
+
+/* Contenedor de videos */
+.video-container {
+  display: flex;
+  gap: 20px; /* Espacio entre videos */
+  flex-wrap: wrap; /* Permitir que los videos se distribuyan en filas */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Videos */
+
+/* Espaciado entre columnas */
+.section .row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Asegurar que los videos estén bien alineados */
+.video-container iframe {
+  width: 100%; /* Ajuste completo para pantallas pequeñas */
+  max-width: 500px; /* Máximo ancho en pantallas grandes */
+  height: 280px; /* Relación de aspecto 16:9 */
+  margin-bottom: 20px; /* Espaciado entre videos */
+  border: none;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para estética */
+}
+
+/* Espaciado responsivo */
+@media (max-width: 992px) {
+  .video-container iframe {
+    max-width: 100%; /* Asegura que los videos se ajusten en pantallas pequeñas */
+    height: 200px; /* Altura reducida */
+  }
+}
+
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .section h1 {
+    font-size: 1.5rem; /* Reducir tamaño de título */
+  }
+
+  .section p {
+    font-size: 0.9rem; /* Reducir texto */
+  }
+
+  .video-container iframe {
+    max-width: 100%; /* Hacer que los videos ocupen todo el ancho disponible */
+    height: 200px; /* Altura ajustada */
+  }
+}
+
+/* Sección Infografías */
+.section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.section h1 {
+  font-size: 2.5rem;
+  color: #1a535c;
+}
+
+.section h3 {
+  color: #4ecdc4;
+}
+
+.section p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.section ul li strong {
+  color: #1a535c;
+}
+
+.section img {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
