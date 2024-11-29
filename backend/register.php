@@ -38,7 +38,7 @@ if (!empty($usuario)) {
         
         if ($conexion->query($sql)) {
             $data['status'] = 'success';
-            $data['message'] = 'Registro exitoso.';
+            $data['message'] = 'Registro exitoso. Redirigiendo...';
         } else {
             $data['message'] = 'ERROR: No se pudo registrar el usuario. ' . $conexion->error;
         }

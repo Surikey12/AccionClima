@@ -35,7 +35,7 @@ if (!empty($usuario)) {
                 $_SESSION['correo'] = $row['correo'];
 
                 $data['status'] = 'success';
-                $data['message'] = 'Inicio de sesión exitoso.';
+                $data['message'] = 'Inicio de sesión exitoso. Redirigiendo...';
                 $data['user'] = array(
                     'nombre' => $row['nombre'],
                     'correo' => $row['correo']
