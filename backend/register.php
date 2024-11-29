@@ -14,7 +14,7 @@ $data = array(
 if (!empty($usuario)) {
     // DECODIFICA EL JSON A OBJETO PHP
     $jsonOBJ = json_decode($usuario);
-
+    $password = $jsonOBJ->password;
 
     // Consulta para verificar si el correo ya está registrado
     $sql = "SELECT * FROM `registrados` WHERE `correo` = '{$jsonOBJ->email}'";
@@ -28,14 +28,17 @@ if (!empty($usuario)) {
     }
 
     if ($result->num_rows == 0) {
+        // Hashear la contraseña
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hasheamos la contraseña
+        
         // Insertar nuevo registro
         $conexion->set_charset("utf8");
         $sql = "INSERT INTO `registrados` (`nombre`, `apellidos`, `correo`, `contraseña`) 
-                VALUES ('{$jsonOBJ->username}', '{$jsonOBJ->lastName}', '{$jsonOBJ->email}', '{$jsonOBJ->password}')";
+                VALUES ('{$jsonOBJ->username}', '{$jsonOBJ->lastName}', '{$jsonOBJ->email}', '{$hashed_password}')";
         
         if ($conexion->query($sql)) {
             $data['status'] = 'success';
-            $data['message'] = 'Registro exitoso.';
+            $data['message'] = 'Registro exitoso. Redirigiendo...';
         } else {
             $data['message'] = 'ERROR: No se pudo registrar el usuario. ' . $conexion->error;
         }

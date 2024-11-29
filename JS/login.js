@@ -104,16 +104,14 @@ $(document).ready(function () {
             data: JSON.stringify(loginData),
             success: function (response) {
                 console.log(response);
-                const respuesta = JSON.parse(response);
-
-                if (respuesta.success) {
-                    mostrarMensaje('success', 'Inicio de sesión exitoso. Redirigiendo...');
-                    setTimeout(() => {
-                        window.location.href = '../propuesta.html'; // Cambia a tu página protegida
-                    }, 2000);
-                } else {
-                    mostrarMensaje('danger', 'Nombre de usuario o contraseña incorrectos.');
+                let message = JSON.parse(response);
+                template = `<p>${message.message}</p>`;
+                
+                if (message.message.length > 0) {
+                    alert(message.message);
                 }
+                // Redirigir a otra página
+                window.location.href = 'propuesta.html';
             },
             error: function () {
                 mostrarMensaje('danger', 'Ocurrió un error en el servidor.');
@@ -150,16 +148,14 @@ $(document).ready(function () {
             data: JSON.stringify(registerData),
             success: function (response) {
                 console.log(response);
-                const respuesta = JSON.parse(response);
-
-                if (respuesta.success) {
-                    mostrarMensaje('success', 'Registro exitoso. Ahora puedes iniciar sesión.');
-                    setTimeout(() => {
-                        window.location.href = '../propuesta.html'; // Cambia a tu página protegida
-                    }, 2000);
-                } else {
-                    mostrarMensaje('danger', 'El nombre de usuario ya está en uso.');
+                let message = JSON.parse(response);
+                template = `<p>${message.message}</p>`;
+                
+                if (message.message.length > 0) {
+                    alert(message.message);
                 }
+                // Redirigir a otra página
+                window.location.href = 'propuesta.html';;
             },
             error: function () {
                 mostrarMensaje('danger', 'Ocurrió un error en el servidor.');
