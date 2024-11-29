@@ -3,7 +3,7 @@
         'localhost',
         'root',
         '123_abc',
-        'propuestas'
+        'accionclima'
     );
 
     /**
