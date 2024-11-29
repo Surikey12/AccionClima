@@ -1,45 +1,64 @@
 <?php
-include 'connect.php';
+include_once __DIR__ . '/connect.php'; // Asegúrate de tener el archivo de conexión configurado correctamente
 
-// Inicializa la respuesta como un objeto JSON
+// OBTIENE LA INFORMACIÓN DEL USUARIO ENVIADA POR EL CLIENTE
+$usuario = file_get_contents('php://input');
+
+// INICIALIZA LA RESPUESTA
 $data = array(
     'status' => 'error',
-    'message' => 'Campos incompletos.'
+    'message' => 'Datos incompletos o inválidos.'
 );
 
-if (!empty($_POST['usuario']) && !empty($_POST['passin'])) {
-    // Sanitiza las entradas para evitar inyecciones SQL
-    $email = $conexion->real_escape_string($_POST['usuario']);
-    $password = $_POST['passin'];
+if (!empty($usuario)) {
+    // DECODIFICA EL JSON A OBJETO PHP
+    $jsonOBJ = json_decode($usuario);
+    
+    // Verificar si los campos necesarios están presentes
+    if (isset($jsonOBJ->username) && isset($jsonOBJ->password)) {
+        // Escapa los valores de entrada para evitar inyecciones SQL
 
-    // Consulta para buscar el usuario por correo
-    $sql = "SELECT * FROM `registrados` WHERE `correo` = '$email'";
-    $result = $conexion->query($sql);
+        $password = $jsonOBJ->password;
 
-    if ($result && $result->num_rows > 0) {
-        $row = $result->fetch_assoc();
+        // Consulta para buscar el usuario por correo
+        $sql = "SELECT * FROM `registrados` WHERE `correo` = '{$jsonOBJ->username}'"; // Usamos solo el correo, la contraseña se verifica luego
 
-        // Verifica la contraseña
-        if (password_verify($password, $row['contraseña'])) {
-            session_start();
-            $_SESSION['correo'] = $row['correo'];
-            
-            $data['status'] = 'success';
-            $data['message'] = 'Inicio de sesión exitoso.';
-            $data['user'] = array(
-                'nombre' => $row['nombre'],
-                'correo' => $row['correo']
-            );
+        $result = $conexion->query($sql);
+
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            // Verifica la contraseña usando password_verify
+            if (password_verify($password, $row['contraseña'])) {
+                // Inicia sesión
+                session_start();
+                $_SESSION['correo'] = $row['correo'];
+
+                $data['status'] = 'success';
+                $data['message'] = 'Inicio de sesión exitoso.';
+                $data['user'] = array(
+                    'nombre' => $row['nombre'],
+                    'correo' => $row['correo']
+                );
+            } else {
+                $data['message'] = 'Usuario o contraseña incorrectos.';
+            }
         } else {
-            $data['message'] = 'Usuario o contraseña incorrectos.';
+            $data['message'] = 'Usuario no encontrado.';
         }
+
+        // Liberar el resultado de la consulta
+        $result->free();
     } else {
-        $data['message'] = 'Usuario no encontrado.';
+        $data['message'] = 'Faltan campos necesarios en los datos enviados.';
     }
 } else {
     $data['message'] = 'Por favor, complete todos los campos.';
 }
 
-// Devuelve la respuesta en formato JSON
-header('Content-Type: application/json');
+// Cerrar la conexión
+$conexion->close();
+
+// Enviar la respuesta JSON
 echo json_encode($data, JSON_PRETTY_PRINT);
+?>
