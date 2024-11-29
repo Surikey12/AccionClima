@@ -7,11 +7,13 @@ body {
     height: 100%;
     overflow-x: hidden; /* Evita el scroll horizontal */
     overflow-y: auto;   /* Permite el scroll vertical si es necesario */
+
   }
 
   /*Barra de navegación*/
   .navbar{
     transition: background-color 0.3s;
+    direction: rtl; /* Cambiar el flujo de contenido a derecha-izquierda */
   }
   
   .navbar-nav .nav-link {
@@ -29,9 +31,14 @@ body {
     min-height: 100vh;
     padding: 50px;
     box-sizing: border-box;
-
   }
-  
+
+
+  .row{
+    direction: rtl; /* Cambiar el flujo de contenido a derecha-izquierda */
+  }
+
+
   .header-text {
     text-align: left;
     padding: 70px;
