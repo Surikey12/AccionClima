@@ -1,0 +1,12 @@
+/* General Styles */
+body {
+    text-size-adjust: 100%;
+}
+
+#signUpButton{
+    padding: 3px 12px;
+}
+
+#signInButton{
+    padding: 3px 12px;
+}

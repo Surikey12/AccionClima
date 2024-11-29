@@ -1,0 +1,73 @@
+/*Fondo general*/
+body {
+    background: url('../IMG/fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin-top: 100px; /*Para compensar la barra fija*/
+    height: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    overflow-y: auto;   /* Permite el scroll vertical si es necesario */
+    }
+
+    /*Barra de navegación*/
+    .navbar{
+        transition: background-color 0.3s;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 50px;
+    }
+
+    .bg-morado{
+        background-color: #6a1b9a !important;
+    }
+    
+    .header-section{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .header-text {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .form-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 3px solid #6a0dad;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 500px;
+        
+    }
+
+    .form-container h2 {
+        color: #6a0dad;
+        text-align: center;
+    }
+
+    .form-container .form-control {
+        margin-bottom: 15px;
+        text-align: left; /* Asegura alineación a la izquierda */
+    }
+
+    .content-data{
+        height: 420px;
+        width: 500;
+    }
+
+    .form-container button {
+        width: 100%;
+        background-color: #6a0dad;
+        border: none;
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .form-container button:hover {
+        background-color: #4b007d;
+    }
