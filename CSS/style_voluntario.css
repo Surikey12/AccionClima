@@ -48,12 +48,12 @@ body {
     }
 
     .form-container .form-control {
-        margin-bottom: 15px;
+        margin-bottom: 5px;
         text-align: left; /* Asegura alineación a la izquierda */
     }
 
     .content-data{
-        height: 420px;
+        height: 450px;
         width: 500;
     }
 
