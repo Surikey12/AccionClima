@@ -70,4 +70,98 @@ body {
     height: 2px; /* Grosor de la línea */
     background-color: white; /* Color de la línea */
   }
-  
+
+
+  .climate-info {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+  .custom-text {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    padding: 20px;
+}
+
+  .custom-paragraph {
+    font-size: 1.2rem ;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+    margin-bottom: 20px; 
+    color: #ffffff;
+  }
+
+  canvas {
+    width: 650px !important;  
+    height: 350px !important; 
+    margin-top: 20px;   
+    margin-bottom: 20px; 
+    display: block;     
+    margin-left: auto;  
+    margin-right: auto; 
+  }
+
+
+
+/* Estilo del botón */
+.custom-button {
+  background-color: #9b59b6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+
+  text-align: center;
+  position: relative; /* Permite posicionar la imagen dentro */
+  display: inline-block;
+  padding: 20px 20px 30px; /* Aumenta el espacio inferior con el tercer valor */
+}
+
+.button-image {
+  display: block; /* Asegura que la imagen aparezca debajo del texto */
+  margin: 10px auto 0; /* Centra la imagen y añade espacio superior */
+  max-width: 150px; /* Aumenta el tamaño máximo de la imagen */
+  width: 150px; /* Establece un ancho fijo para garantizar un tamaño más grande */
+  border-radius: 5px;
+}
+
+/* Añade margen para botones múltiples (opcional) */
+.custom-button + .custom-button {
+  margin-top: 15px;
+}
+
+.custom-button:hover {
+  background-color: #8e44ad; 
+}
+
+.boxed-text {
+  font-size: 1.2rem;
+  text-align: left;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;  /* Añadido padding uniforme alrededor del texto */
+  margin-bottom: 20px;
+  color: #ffffff;
+  border: 2px solid #ffffff;  /* Borde blanco alrededor del texto */
+  border-radius: 8px;  /* Bordes redondeados, si deseas */
+}
+
+
+
+
+
+
+
+
+
+
