@@ -10,7 +10,7 @@
     <!-- Archivo de estilos -->
     <link rel="stylesheet" href="./CSS/style_propuesta.css"> 
 
-    <title>Medidor de Impacto</title>
+    <title>Propuestas</title>
   </head>
   <body>
     <!-- ====================================================================================================== -->
@@ -34,48 +34,61 @@
     </nav>
 
     <!-- ====================================================================================================== -->
-    <!-- ENCABEZADO Y FORMULARIO-->
+    <!-- FORMULARIO Y CARRUSEL-->
     <!-- ====================================================================================================== -->
+    <div class="text-center mb-4">
+      <h1 class="display-6 fw-bold">PROPUESTAS</h1><br>
+      <p>TIENES ALGUNA INICIATIVA QUE TE GUSTARÍA COMPARTIR? ADELANTE, TUS IDEAS PUEDEN SUMARSE PARA FORMAR ALGO GRANDE</p>
+    </div><br>
     <div class="container-fluid align-items-center header-section">
-      <!-- Texto del encabezado -->
-      <div class="col-md-8 header-text">
-        <h1 class="display-6 fw-bold" >VOLUNTARIADO</h1><br>
-        <P>SE PARTE DE NUESTRA COMUNIDAD Y UNETE A LAS CAMPAÑAS QUE TENEMOS POR EL MEDIO AMBIENTE</P>
-        <!-- Espaciado entre texto y formulario --> 
-        <div class="my-2"></div>
-        <!-- Contenedor del formulario -->
-          <div class="justify-content-center align-items-center header-section">
-              <div class="row p-5">
-                  <div class="col-md-8 form-container">
-                      <div class="card content-body">
+      <div class="row w-100">
+          <!-- Carrusel de datos a la izquierda -->
+          <div class="col-md-6 d-flex justify-content-center align-items-center vh-60 " >
+              <div id="data-carousel" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner" id="carousel-content">
+                      <!-- Los elementos del carrusel serán insertados dinámicamente aquí -->
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#data-carousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#data-carousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+          </div>
+
+          <!-- Formulario a la derecha -->
+          <div class="col-md-6">
+              <div class="form-container">
+                  <div class="card content-body">
                       <div class="card-body content-data">
-                          <!-- FORMULARIO PARA AGREGAR VOLUNTARIO -->
-                          <form id="volunteer-form">
-                          <input type="hidden" id="voluntarioId">
-                          <div class="form-group">
-                              <h2 class="display-8 fw-bold">Datos Personales</h2>
-                          </div>
-                          <div class="form-group">
-                              <input class="align-items-center form-control" type="text" id="nombre" placeholder="Nombre del voluntario">
-                              <input class="form-control" type="text" id="apellidos" placeholder="Apellidos">
-                              <input class="form-control" type="text" id="email" placeholder="Email: ejemplo@gmail.com">
-                              <textarea class="form-control" id="description" cols="30" rows="5" placeholder="Mensaje: Cuentanos porque te interesa unirte como voluntario/a"></textarea>
-                          </div>
-                          <input type="hidden" id="voluntarioId">
-                          <button class="btn btn-primary btn-block text-center" type="submit">
-                              Enviar respuesta
-                          </button>
+                          <form id="propuesta-form">
+                              <input type="hidden" id="propuestaId">
+                              <div class="form-group">
+                                  <h2 class="display-8 fw-bold">Datos Personales</h2>
+                              </div><br>
+                              <div class="form-group">
+                                  <input class="align-items-center form-control" type="text" id="nombre" placeholder="Nombre del voluntario">
+                                  <input class="form-control" type="text" id="apellidos" placeholder="Apellidos">
+                                  <textarea class="form-control" id="description" cols="30" rows="5" placeholder="Propuesta: Tus ideas son bien recibidas"></textarea>
+                              </div>
+                              <input type="hidden" id="voluntarioId">
+                              <button class="btn btn-primary btn-block text-center" type="submit">Enviar respuesta</button>
                           </form>
                       </div>
-                      </div>
                   </div>
-               </div>
-            </div>
-
-        </div>
+              </div>
+          </div>
+      </div>
     </div> 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
     <!-- Archivo de JavaScript si se llegara a ocupar aqui-->
+    <script src="JS/pro.js"></script>
   </body>
 </html>
