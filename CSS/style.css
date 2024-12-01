@@ -163,7 +163,37 @@ body {
   border-radius: 8px;  /* Bordes redondeados, si deseas */
 }
 
+/* Personaliza la cabecera del modal */
+.modal-header {
+  background-color: #8b4caf; /* Verde ecológico */
+  color: white;
+  border-bottom: none;
+}
 
+/* Personaliza el cuerpo del modal */
+.modal-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: black;
+}
+
+/* Botón de cierre personalizado */
+.btn-close {
+  background-color: transparent;
+  border: none;
+}
+
+/* Estilo del botón de cerrar en el pie */
+.modal-footer .btn-secondary {
+  background-color: #8b4caf;
+  color: white;
+  border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #45a049;
+}
 
 
 

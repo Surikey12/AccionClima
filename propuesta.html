@@ -19,19 +19,70 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Acerca de</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aprende.html">Aprende</a></li>
-                    <li class="nav-item"><a class="nav-link" href="medidor_impacto.html">Medidor de Impacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="toma_accion.html">Toma Acción</a></li>
-                </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Acerca de</a></li>
+              <li class="nav-item"><a class="nav-link" href="aprende.html">Aprende</a></li>
+              <li class="nav-item"><a class="nav-link" href="medidor_impacto.html">Medidor de Impacto</a></li>
+              <li class="nav-item"><a class="nav-link" href="toma_accion.html">Toma Acción</a></li>
+            </ul>
           </div>
-          <a class="navbar-brand me-auto"  href="#">Climate Action</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand me-auto" href="#" data-bs-toggle="modal" data-bs-target="#climateActionModal" >
+            <img src="IMG/logopag.png" alt="Climate Action" height="40" style="margin-left: 1rem;"/>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-    </nav>
+      </nav>
+
+      <div
+      class="modal fade"
+      id="climateActionModal"
+      tabindex="-1"
+      aria-labelledby="climateActionModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="climateActionModalLabel">Nuestra Misión</h5>
+          </div>
+          <div class="modal-body" style="text-align: left;">
+            <p>
+              Nuestra misión es sensibilizar y movilizar a la comunidad local
+              sobre los efectos del cambio climático en la ciudad de Puebla. A
+              través de nuestra plataforma, buscamos proporcionar información
+              precisa y relevante sobre los impactos del cambio climático en
+              nuestra región, al mismo tiempo que ofrecemos herramientas para
+              medir estos efectos y fomentar la participación activa. Nos
+              comprometemos a ofrecer soluciones prácticas para mitigar estos
+              efectos, promoviendo el voluntariado y la colaboración colectiva
+              para construir un futuro más sostenible y resiliente para todos.
+            </p>
+            <p>
+              ¡Únete a nosotros para construir un futuro más verde y sostenible!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ====================================================================================================== -->
     <!-- FORMULARIO Y CARRUSEL-->

@@ -1,73 +1,104 @@
 /*Fondo general*/
 body {
-    background: url('../IMG/fondo.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    margin-top: 100px; /*Para compensar la barra fija*/
-    height: 100%;
-    overflow-x: hidden; /* Evita el scroll horizontal */
-    overflow-y: auto;   /* Permite el scroll vertical si es necesario */
-    }
+  background: url("../IMG/fondo.png") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  margin-top: 100px; /*Para compensar la barra fija*/
+  height: 100%;
+  overflow-x: hidden; /* Evita el scroll horizontal */
+  overflow-y: auto; /* Permite el scroll vertical si es necesario */
+}
 
-    /*Barra de navegación*/
-    .navbar{
-        transition: background-color 0.3s;
-    }
+/*Barra de navegación*/
+.navbar {
+  transition: background-color 0.3s;
+}
 
-    .navbar-nav .nav-link {
-        margin-left: 50px;
-    }
+.navbar-nav .nav-link {
+  margin-left: 50px;
+}
 
-    .bg-morado{
-        background-color: #6a1b9a !important;
-    }
-    
-    .header-section{
-        display: flex;
-        justify-content: center;
-    }
-    
-    .header-text {
-        text-align: center;
-        padding: 10px;
-    }
+.bg-morado {
+  background-color: #6a1b9a !important;
+}
 
-    .form-container {
-        background-color: rgba(255, 255, 255, 0.9);
-        border: 3px solid #6a0dad;
-        border-radius: 15px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        width: 500px;
-        
-    }
+.header-section {
+  display: flex;
+  justify-content: center;
+}
 
-    .form-container h2 {
-        color: #6a0dad;
-        text-align: center;
-    }
+.header-text {
+  text-align: center;
+  padding: 10px;
+}
 
-    .form-container .form-control {
-        margin-bottom: 5px;
-        text-align: left; /* Asegura alineación a la izquierda */
-    }
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid #6a0dad;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
 
-    .content-data{
-        height: 450px;
-        width: 500;
-    }
+.form-container h2 {
+  color: #6a0dad;
+  text-align: center;
+}
 
-    .form-container button {
-        width: 100%;
-        background-color: #6a0dad;
-        border: none;
-        color: white;
-        font-size: 16px;
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-    }
+.form-container .form-control {
+  margin-bottom: 5px;
+  text-align: left; /* Asegura alineación a la izquierda */
+}
 
-    .form-container button:hover {
-        background-color: #4b007d;
-    }
+.content-data {
+  height: 450px;
+  width: 500;
+}
+
+.form-container button {
+  width: 100%;
+  background-color: #6a0dad;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.form-container button:hover {
+  background-color: #4b007d;
+}
+
+/* Personaliza la cabecera del modal */
+.modal-header {
+  background-color: #8b4caf; /* Verde ecológico */
+  color: white;
+  border-bottom: none;
+}
+
+/* Personaliza el cuerpo del modal */
+.modal-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: black;
+}
+
+/* Botón de cierre personalizado */
+.btn-close {
+  background-color: transparent;
+  border: none;
+}
+
+/* Estilo del botón de cerrar en el pie */
+.modal-footer .btn-secondary {
+  background-color: #8b4caf;
+  color: white;
+  border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #45a049;
+}
