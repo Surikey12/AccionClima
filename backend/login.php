@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/connect.php'; // Asegúrate de tener el archivo de conexión configurado correctamente
+/*include_once __DIR__ . '/connect.php'; // Asegúrate de tener el archivo de conexión configurado correctamente
 
 // OBTIENE LA INFORMACIÓN DEL USUARIO ENVIADA POR EL CLIENTE
 $usuario = file_get_contents('php://input');
@@ -60,5 +60,13 @@ if (!empty($usuario)) {
 $conexion->close();
 
 // Enviar la respuesta JSON
-echo json_encode($data, JSON_PRETTY_PRINT);
+echo json_encode($data, JSON_PRETTY_PRINT);*/
+
+    namespace backend;
+    require_once __DIR__ . '/vendor/autoload.php';
+    use MyApi\Read\Read;
+
+    $usuario = new Read('accionclima');
+    $usuario -> login(file_get_contents('php://input'));
+    echo $usuario->getData();
 ?>

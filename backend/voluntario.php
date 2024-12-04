@@ -1,5 +1,5 @@
 <?php
-    include_once __DIR__.'/connect.php';
+    /*include_once __DIR__.'/connect.php';
 
     // SE OBTIENE LA INFORMACIÓN DEL PRODUCTO ENVIADA POR EL CLIENTE
     $voluntario = file_get_contents('php://input');
@@ -31,5 +31,13 @@
     }
 
     // SE HACE LA CONVERSIÓN DE ARRAY A JSON
-    echo json_encode($data, JSON_PRETTY_PRINT);
+    echo json_encode($data, JSON_PRETTY_PRINT);*/
+
+    namespace backend;
+    require_once __DIR__ . '/vendor/autoload.php';
+    use MyApi\Create\Create;
+
+    $usuario = new Create('accionclima');
+    $usuario -> voluntier(file_get_contents('php://input'));
+    echo $usuario->getData();
 ?>
