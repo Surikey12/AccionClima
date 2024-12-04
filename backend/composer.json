@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4": {
+            "MyApi\\": "myapi/"
+        }
+    },
+    "require": {
+        "slim/slim": "3.0"
+    }
+}

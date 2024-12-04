@@ -98,7 +98,7 @@ $(document).ready(function() {
         
             // Enviar los datos vía AJAX
             $.ajax({
-                url: 'backend/voluntario.php',
+                url: `backend/index.php/voluntarios`,
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(finalProductData),
@@ -120,34 +120,5 @@ $(document).ready(function() {
         });
     });
     
-
-    /*Función de listar productos
-    function fetchProducts() {
-        $.ajax({
-            url: 'backend/product-list.php',
-            type: 'GET',
-            success: function(response){
-                let products = JSON.parse(response);
-                let template = '';
-                products.forEach(product =>{
-                    template += `
-                        <tr productId = "${product.id}">
-                            <td>${product.id}</td>
-                            <td>
-                                <a href="#" class="product-item">${product.nombre}</a>
-                            </td>
-                            <td>${product.detalles}</td>
-                            <td>
-                                <button class="product-delete btn btn-danger">
-                                    Eliminar
-                                </button>  
-                            </td>
-                        </tr>
-                    `
-                });
-                $('#products').html(template);
-            }
-        });
-    }*/
 
 });
