@@ -98,7 +98,7 @@ $(document).ready(function () {
 
         // Enviar datos vía AJAX
         $.ajax({
-            url: 'backend/login.php',
+            url: '/backend/index.php/login',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(loginData),
@@ -142,7 +142,7 @@ $(document).ready(function () {
 
         // Enviar datos vía AJAX
         $.ajax({
-            url: 'backend/register.php',
+            url: 'backend/index.php/registro',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(registerData),
