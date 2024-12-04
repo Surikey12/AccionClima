@@ -32,7 +32,7 @@ $app->get('/propuestas', function ($request, $response, $args) use ($read) {
 });
 
 // Login
-$app->post('/login', function ($request, $response, $args) use ($create) {
+$app->post('/login', function ($request, $response, $args) use ($read) {
     $usuario = file_get_contents('php://input');
     $read->login($usuario);
     $data = $read->getData();
@@ -62,4 +62,6 @@ $app->post('/usuario/propuesta', function ($request, $response, $args) use ($cre
     $data = $create->getData();
     return $response->write($data);
 });
+
+$app->run();
 ?>

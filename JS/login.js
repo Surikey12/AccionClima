@@ -98,7 +98,7 @@ $(document).ready(function () {
 
         // Enviar datos vía AJAX
         $.ajax({
-            url: '/backend/index.php/login',
+            url: `backend/index.php/login`,
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(loginData),
@@ -107,11 +107,16 @@ $(document).ready(function () {
                 let message = JSON.parse(response);
                 template = `<p>${message.message}</p>`;
                 
-                if (message.message.length > 0) {
+                if (message.status === 'success') {
+                    // Mostrar mensaje de éxito
+                    alert(message.message);
+    
+                    // Redirigir a otra página
+                    window.location.href = 'propuesta.html';
+                } else {
+                    // Mostrar mensaje de error
                     alert(message.message);
                 }
-                // Redirigir a otra página
-                window.location.href = 'propuesta.html';
             },
             error: function () {
                 mostrarMensaje('danger', 'Ocurrió un error en el servidor.');
@@ -142,7 +147,7 @@ $(document).ready(function () {
 
         // Enviar datos vía AJAX
         $.ajax({
-            url: 'backend/index.php/registro',
+            url: `backend/index.php/registro`,
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(registerData),

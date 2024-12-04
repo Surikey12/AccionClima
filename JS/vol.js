@@ -98,7 +98,7 @@ $(document).ready(function() {
         
             // Enviar los datos vía AJAX
             $.ajax({
-                url: '/backend/index.php/voluntarios',
+                url: `backend/index.php/voluntarios`,
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(finalProductData),

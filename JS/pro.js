@@ -89,7 +89,7 @@ $(document).ready(function() {
         
             // Enviar los datos vía AJAX
             $.ajax({
-                url: 'backend/index.php/usuario/propuesta',
+                url: `backend/index.php/usuario/propuesta`,
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(finalProductData),
@@ -115,7 +115,7 @@ $(document).ready(function() {
     // Función para listar productos en el carrusel
     function fetchProductsForCarousel() {
         $.ajax({
-            url: '/backend/index.php/propuestas', // Asegúrate de que esta ruta sea correcta
+            url: `backend/index.php/propuestas`,
             type: 'GET',
             success: function (response) {
                 let products = JSON.parse(response);
