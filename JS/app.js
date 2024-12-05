@@ -162,3 +162,29 @@ temperatureButton.addEventListener('click', () => toggleGraphs('temperature'));
 
 // Botón de precipitación
 rainButton.addEventListener('click', () => toggleGraphs('rain'));
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector("#climateCarousel");
+    const carouselInner = carousel.querySelector(".carousel-inner");
+    const propositoOverlay = document.createElement("div");
+
+    // Crear el overlay para el propósito
+    propositoOverlay.className = "proposito-overlay";
+    propositoOverlay.textContent =
+        "Nuestro proposito es crear una plataforma informativa y participativa que sensibilice a la comunidad sobre los efectos del cambio climático en la ciudad de Puebla. A través de esta página web, se busca proporcionar información relevante sobre los impactos locales, así como apartados en donde se puedan hacer voluntarios y buscar soluciones prácticas para reducir el cambio climático, fomentando la acción colectiva mediante la promoción de iniciativas de voluntariado y propuestas de mejora";
+    carousel.appendChild(propositoOverlay);
+
+    // Detener el carrusel al pasar el cursor
+    carousel.addEventListener("mouseenter", () => {
+        const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+        if (bsCarousel) bsCarousel.pause(); // Detener carrusel
+        propositoOverlay.style.display = "flex"; // Mostrar propósito
+    });
+
+    // Reanudar el carrusel al quitar el cursor
+    carousel.addEventListener("mouseleave", () => {
+        const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+        if (bsCarousel) bsCarousel.cycle(); // Reiniciar carrusel
+        propositoOverlay.style.display = "none"; // Ocultar propósito
+    });
+});
